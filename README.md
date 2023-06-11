@@ -1,5 +1,5 @@
 # Vitrine Virtual
-## Atividade proposta como trabalho avaliativo
+## Atividade proposta como trabalho avaliativa
 
 # Getting Started with Create React App
 
