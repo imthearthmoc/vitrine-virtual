@@ -1,24 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import { useState, useEffect } from "react";
+import Product from "./components/Product";
+import Store from "./components/Store";
+import axios from 'axios';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Switch>
+        <Route path="/" exact component={(props) => <Store />}/>
+        <Route 
+          path="/product/:id" 
+          component={props => <Product {...props}/>}
+        /> 
+        <Route>404 Page</Route>
+      </Switch>
+    </Router>
   );
 }
 
